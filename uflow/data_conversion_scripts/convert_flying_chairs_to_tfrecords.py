@@ -41,15 +41,15 @@ def convert_dataset():
     tf.io.gfile.mkdir(FLAGS.output_dir)
 
   train_dir = os.path.join(FLAGS.output_dir, 'train')
-  test_dir = os.path.join(FLAGS.output_dir, 'test')
+  # test_dir = os.path.join(FLAGS.output_dir, 'test')
   if not tf.io.gfile.exists(train_dir):
     tf.io.gfile.mkdir(train_dir)
-  if not tf.io.gfile.exists(test_dir):
-    tf.io.gfile.mkdir(test_dir)
+  # if not tf.io.gfile.exists(test_dir):
+  #   tf.io.gfile.mkdir(test_dir)
 
   # Directory with images.
   images = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/*.ppm'))
-  flow_list = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/*.flo'))
+  # flow_list = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/*.flo'))
   assert len(images) // 2 == len(flow_list)
   image_list = []
   for i in range(len(flow_list)):
