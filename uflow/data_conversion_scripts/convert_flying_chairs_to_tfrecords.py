@@ -49,7 +49,7 @@ def convert_dataset():
 
   # Directory with images.
   image_list = []
-  for folder_name in FLAGS.data_dir:
+  for folder_name in os.listdir(FLAGS.data_dir):
     # files_list  = sorted(os.listdir(os.path.join(input_main_folder_name,folder_name)),key= lambda x : int(x.split("_")[3]))
     files_list  = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/'+folder_name),key= lambda x : int(x.split("_")[3]))
     for index in range(len(files_list)):
