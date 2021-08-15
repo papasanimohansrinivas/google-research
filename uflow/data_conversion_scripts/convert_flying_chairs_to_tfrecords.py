@@ -51,7 +51,7 @@ def convert_dataset():
   image_list = []
   for folder_name in os.listdir(FLAGS.data_dir):
     # files_list  = sorted(os.listdir(os.path.join(input_main_folder_name,folder_name)),key= lambda x : int(x.split("_")[3]))
-    files_list  = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/'+folder_name),key= lambda x : int(x.split("_")[3]))
+    files_list  = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/'+folder_name+"/*.png"),key= lambda x : int(x.split("_")[3]))
     for index in range(len(files_list)):
       if (index!=len(files_list)-1):
         if files_list[index].split("_")[3]!=files_list[index+1].split("_")[3]:
