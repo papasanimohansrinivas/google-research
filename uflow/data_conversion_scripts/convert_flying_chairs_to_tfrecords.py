@@ -120,8 +120,8 @@ def convert_dataset():
     tf.io.gfile.copy(images[1], img2_path)
     # tf.io.gfile.copy(flow, flow_path)
 
-    image1_data = imageio.imread(img1_path)
-    image2_data = imageio.imread(img2_path)
+    image1_data = imageio.imread(img1_path,pilmode="RGB")
+    image2_data = imageio.imread(img2_path,pilmode="RGB")
     # flow_data = conversion_utils.read_flow(flow_path)
 
     height = image1_data.shape[0]
