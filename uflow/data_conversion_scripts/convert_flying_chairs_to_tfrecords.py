@@ -57,8 +57,8 @@ def convert_dataset():
         if files_list[index].split("_")[3]!=files_list[index+1].split("_")[3]:
           # print(files_list[index],files_list[index+1])
           # total_pairs+=1
-          moving_file_name = os.path.join(input_main_folder_name,folder_name,files_list[index])
-          static_file_name = os.path.join(input_main_folder_name,folder_name,files_list[index+1])
+          moving_file_name = os.path.join(FLAGS.data_dir,folder_name,files_list[index])
+          static_file_name = os.path.join(FLAGS.data_dir,folder_name,files_list[index+1])
           image_list.append((moving_file_name,static_file_name))
   # images = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/*.ppm'))
   # flow_list = sorted(tf.io.gfile.glob(FLAGS.data_dir + '/*.flo'))
